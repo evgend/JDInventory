@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+    <ViewDefinitions>
+
+        <View>
+            <Name>JDInventory</Name>
+            <ViewSelectedBy>
+                <TypeName>Report.DiskDrive</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Computer</Label>
+                        <Width>16</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>ID</Label>
+                        <Width>2</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Size (GB)</Label>
+                        <Width>12</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Free (GB)</Label>
+                        <Width>9</Width>
+                    </TableColumnHeader>
+                </TableHeaders>
+
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>ComputerName</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>DeviceID</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>[int]($_.Size / 1GB)</ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>[int]($_.FreeSpace / 1GB)</ScriptBlock>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+
+            </TableControl>
+        </View>
+        <View>
+            <Name>JDInventory</Name>
+            <ViewSelectedBy>
+                <TypeName>Report.ComputerSystem</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Computer</Label>
+                        <Width>16</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Memory</Label>
+                        <Width>6</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>OS Type</Label>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>ServicePack</Label>
+                        <Width>15</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Model</Label>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>OS Arc.</Label>
+                        <Width>7</Width>
+                    </TableColumnHeader>
+                </TableHeaders>
+
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>ComputerName</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>TotalPhysicalMemory</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>OperatingSystem</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>ServicePack</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Model</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>OSArchitecture</PropertyName>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+
+            </TableControl>
+        </View>
+
+    </ViewDefinitions>
+</Configuration>
